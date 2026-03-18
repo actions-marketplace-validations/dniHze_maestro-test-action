@@ -13,14 +13,14 @@ jobs:
         os: [macos-latest, ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - run: npm install
       - run: npm run all
 
   android-test:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - uses: actions/setup-java@v3
         with:
           distribution: 'adopt'
@@ -43,7 +43,7 @@ jobs:
   ios-test:
     runs-on: macos-12
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - uses: futureware-tech/simulator-action@v2
         with:
           model: 'iPhone 14 Pro'
