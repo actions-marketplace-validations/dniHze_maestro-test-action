@@ -33,7 +33,7 @@ jobs:
           ram-size: 2048M
           target: default
           script: maestro test --format=junit --output=report.xml --no-ansi .maestro/android-contacts.yaml
-      - uses: dorny/test-reporter@v1
+      - uses: dorny/test-reporter@v2
         if: success() || failure()
         with:
           name: Maestro tests
@@ -52,7 +52,7 @@ jobs:
         with:
           flow: .maestro/ios-settings.yaml
           report: report.xml
-      - uses: dorny/test-reporter@v1
+      - uses: dorny/test-reporter@v2
         if: success() || failure()
         with:
           name: Maestro tests
